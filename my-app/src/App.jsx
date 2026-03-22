@@ -6,13 +6,19 @@ import gsap from 'gsap';
 import FlavourSection from './Sections/FlavourSection';
 import { useGSAP } from '@gsap/react';
 
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
 const App = () => {
   useGSAP(() => {
     ScrollSmoother.create({
+      wrapper: '#smooth-wrapper',
+      content: '#smooth-content',
       smooth: 3,
       effects: true,
     });
   });
+  
   return (
     <main>
       <NavBar />
@@ -28,4 +34,3 @@ const App = () => {
 }
 
 export default App
-
