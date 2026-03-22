@@ -6,7 +6,7 @@ const flavourlists = [
     },
     {
         name : 'Strawberry Milk',
-        color : 'pink',
+        color : 'red',
         rotation : 'md:rotate-[8deg] rotate-0'
     },
     {

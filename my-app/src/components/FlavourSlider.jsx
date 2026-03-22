@@ -19,14 +19,14 @@ const FlavourSlider = () => {
                     scrollTrigger: {
                         trigger: '.flavour-section',
                         start: ' 2% top',
-                        end: `+=${scrollAmount + 1500}px`,
+                        end: `+=${scrollAmount + 100}px`,
                         scrub: true,
                         pin: true
                     },
                 });
 
                 tl.to('.flavour-section', {
-                    x: `-${scrollAmount - 1500}px`,
+                    x: `${scrollAmount - 100}px`,
                     ease: 'power1.inOut',
                 });
 

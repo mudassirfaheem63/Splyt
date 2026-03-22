@@ -4,16 +4,15 @@ import MessageSection from './Sections/MessageSection';
 import { ScrollSmoother, ScrollTrigger } from 'gsap/all';
 import gsap from 'gsap';
 import FlavourSection from './Sections/FlavourSection';
+import NutritionSection from './Sections/NutritionSection';
 import { useGSAP } from '@gsap/react';
 
-// Register GSAP plugins
+
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 const App = () => {
   useGSAP(() => {
     ScrollSmoother.create({
-      wrapper: '#smooth-wrapper',
-      content: '#smooth-content',
       smooth: 3,
       effects: true,
     });
@@ -27,6 +26,7 @@ const App = () => {
           <HeroSection />
           <MessageSection />
           <FlavourSection />
+          <NutritionSection />
         </div>
       </div>
     </main>
