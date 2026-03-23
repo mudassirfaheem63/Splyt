@@ -4,7 +4,6 @@ import { SplitText } from "gsap/all";
 import { useMediaQuery } from "react-responsive";
 
 
-
 const HeroSection = () => {
     const isMobile = useMediaQuery({
         query: '(max-width:768px)',
@@ -83,7 +82,7 @@ const HeroSection = () => {
                         autoPlay
                         muted
                         playsInline
-                        className="absolute inset-0 w-full h-full object-contain">
+                        className="absolute inset-0 w-full h-full object-cover">
                     </video>
                 )}
                 <div className="hero-content opacity-0">
