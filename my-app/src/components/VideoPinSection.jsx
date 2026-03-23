@@ -1,0 +1,62 @@
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from "gsap/all";
+import { useMediaQuery } from "react-responsive";
+
+
+const VideoPinSection = () => {
+    const isMobile = useMediaQuery({
+        query: '(max-width:768px)',
+    });
+
+    useGSAP(() => {
+        if (!isMobile) {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.vd-pin-section',
+                    start: '15% top',
+                    end: '200% top',
+                    scrub: 1.5,
+                    pin: true
+                },
+            });
+
+
+            tl.to('.video-box', {
+                clipPath: 'circle(100% at 50% 50%)',
+                ease: 'power1.inOut',
+            })
+        }
+    });
+
+
+    return (
+        <section className="vd-pin-section">
+            <div
+                style={{
+                    clipPath: isMobile
+                        ? 'circle(100% at 50% 50%)'
+                        : 'circle(6% at 50% 50%)',
+                }}
+                className='size-full video-box'>
+                <video src="../../public/videos/pin-video.mp4"
+                    playsInline
+                    muted
+                    loop
+                    autoPlay></video>
+                <div className="abs-center md:scale-100 scale-200">
+                    <img src="../../public/images/circle-text.svg"
+                        className='spin-circle'
+                        alt="" />
+                    <div className="play-btn">
+                        <img src="../../public/images/play.svg"
+                            className='size-[3vw] ml-[.5vw]'
+                            alt="" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+export default VideoPinSection
